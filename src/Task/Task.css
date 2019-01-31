@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 5px;
 }
 
 .Task-content{
@@ -16,4 +17,20 @@
 
 .Task-content span{
     margin-left: 15px;
+}
+
+
+.Task-actions{
+    font-size: 19px;
+}
+
+.Task-edit{
+    cursor: pointer;
+    color: #2C3E50;
+    margin-right: 10px;
+}
+
+.Task-delete{
+    cursor: pointer;
+    color: #E74C3C;
 }
