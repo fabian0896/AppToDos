@@ -9,6 +9,7 @@ class App extends Component {
       <div className="App">
           <Header  />
           <Task task="Comprar cosas "/>
+          <Task task="Comprar cosas "/>
       </div>
     );
   }

@@ -1,11 +1,12 @@
 .Task{
     min-height: 50px;
     width: 100%;
-    background: lightblue;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 5px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .Task-content{
@@ -15,7 +16,7 @@
     align-items: center;
 }
 
-.Task-content span{
+.Task-content > span{
     margin-left: 15px;
 }
 
@@ -28,6 +29,7 @@
     cursor: pointer;
     color: #2C3E50;
     margin-right: 10px;
+    font-size: 20px;
 }
 
 .Task-delete{

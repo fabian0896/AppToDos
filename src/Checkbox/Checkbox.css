@@ -1,0 +1,80 @@
+
+.Checkbox-container{
+    position: relative;
+    width: 25px;
+    height: 25px; 
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+.Checkbox-container input{
+    position: absolute;
+    display: none;
+    width: 0;
+    height: 0; 
+}
+
+.Checked{
+    animation: scale-out .2s linear forwards;
+    position: absolute;
+    margin: 0;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #707070;
+}
+
+.Checkbox-container input:checked + .Checked{
+    animation: scale-in .2s linear forwards;
+    display: flex;
+}
+
+
+@keyframes scale-in{
+    0%{
+        transform: scale(1)
+    }
+    50%{
+        transform: scale(.4)
+    }
+    70%{
+        transform: translate(1.5);
+    }
+    90%{
+        background: white;
+    }
+    100%{
+        transform: scale(1);
+        background: #2ECC71;
+        border: none;
+    }
+}
+
+
+@keyframes scale-out{
+    0%{
+        transform: scale(1)
+    }
+    50%{
+        transform: scale(.4)
+    }
+    70%{
+        transform: translate(1.5);
+    }
+    90%{
+        background: white;
+    }
+    100%{
+        transform: scale(1);
+        background: white;
+    }
+}
+
