@@ -1,0 +1,23 @@
+.Header{
+    background: #ECF0F1;
+    margin: 0;
+    display: flex; 
+    height: 95px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.Header-title{
+    color: #707070;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.Header-button{
+    text-decoration: none;
+    color: #2ECC71;
+    font-size: 25px;
+}
