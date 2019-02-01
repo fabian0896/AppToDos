@@ -3,20 +3,14 @@ import './Checkbox.css';
 
 class Checkbox extends React.Component{
     
-    state={
-        check: this.props.done
-    }
-
     handleClick = ()=>{
-        this.setState({
-            check: !this.state.check
-        })
+        this.props.handleChange(!this.props.done);
     }
     
     render(){
         return(
             <label  className="Checkbox-container">
-                <input onChange={this.handleClick} checked={this.state.check} onClick={ this.handleClick}  type="checkbox" name="" id=""/>
+                <input onChange={this.handleClick} checked={this.props.done} onClick={ this.handleClick}  type="checkbox" name="" id=""/>
                 <span className="Checked"><i className="fas fa-check"></i></span>
             </label>
         )

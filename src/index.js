@@ -32,7 +32,28 @@ const data = {
 
 
 function reducer(state, action){
-    return state;
+    switch(action.type){
+        case 'UPDATE_CHECK':{
+            return { 
+                ...state, 
+                task: state.task.map((item, index)=>{
+                    if(index === action.payload.idx){
+                        return { ...item, done: action.payload.done }
+                    } else{
+                        return item;
+                    }
+                })
+            }
+        }
+        case 'DELETE_TASK':{
+            return{
+                ...state,
+                task: state.task.filter((item,index)=> index !== action.payload.idx ),
+            }
+        }
+        default:
+            return state;
+    }
 }
 
 const store = createStore(reducer, data, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());

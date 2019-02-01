@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+.Task:hover{
+    
+}
+
 .Task-content{
     font-size: 18px;
     color: #707070;
@@ -23,6 +27,7 @@
 
 .Task-actions{
     font-size: 19px;
+    animation: enter .3s ease-in;
 }
 
 .Task-edit{
@@ -35,4 +40,30 @@
 .Task-delete{
     cursor: pointer;
     color: #E74C3C;
+}
+
+.Task-text-done{
+    color: #AAA
+}
+
+.isHolding{
+    box-shadow: 0px 3px 6px rgba(0,0,0,.40)
+}
+
+.noHolding:hover{
+    box-shadow: 0px 3px 6px rgba(0,0,0,.16)
+}
+
+@keyframes enter{
+    from{
+        transform: scale(0);
+        opacity: 0;
+    }
+    70%{
+        transform: scale(1.3)
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
 }
