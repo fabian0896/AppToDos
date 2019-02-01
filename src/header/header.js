@@ -2,10 +2,16 @@ import React from 'react';
 import './header.css';
 
 function Header(props){
+    
+
+    let clase = '';
+    if(props.edit !== null){
+        clase = props.edit? 'active-header' : 'disable-header';
+    }
     return( 
         <div className="Header">
             <h2 className="Header-title">Cosas por hacer</h2>
-            <a className="Header-button" href="#" ><i className="fas fa-plus"></i></a>
+            <a  onClick={props.handleClick} className={`Header-button ${ clase }`} href="#" ><i className="fas fa-plus"></i></a>
         </div>
     )
 }

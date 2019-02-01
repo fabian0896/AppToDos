@@ -1,0 +1,36 @@
+.Formulario{
+    background: gray;
+    position: absolute;
+    z-index: 3;
+    top: -100%;
+    left: 0;
+    right: 0;
+    height: calc(100% - 95px);
+    /* animation: form-enter .7s linear forwards; */
+}
+
+
+.active{
+    animation: form-enter .7s linear forwards;
+}
+
+.disable{
+    animation: form-enter .7s linear forwards reverse;
+}
+
+
+@keyframes form-enter{
+    from{
+        top: -100%;
+    }
+    50%{
+        top: 95px
+    }
+    75%{
+        top: -1%;
+    }
+    to{
+        top: 95px
+    }
+
+}

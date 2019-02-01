@@ -7,6 +7,9 @@
     justify-content: space-between;
     padding: 0 20px;
     margin-bottom: 30px;
+    position: relative;
+    z-index: 5;
+    border-radius: 15px 15px 0 0;
 }
 
 .Header-title{
@@ -21,4 +24,35 @@
     text-decoration: none;
     color: #2ECC71;
     font-size: 25px;
+    transform: rotate(0)
+}
+
+.active-header{
+    animation: rotate .3s ease-in-out forwards;
+}
+
+.disable-header{
+    animation: rotate-inverse .3s ease-in-out forwards reverse;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+        color: #2ECC71;
+    }
+    to{
+        transform: rotate(45deg);
+        color: #E74C3C;
+    }
+}
+
+@keyframes rotate-inverse{
+    from{
+        transform: rotate(0deg);
+        color: #2ECC71;
+    }
+    to{
+        transform: rotate(45deg);
+        color: #E74C3C;
+    }
 }
