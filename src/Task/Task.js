@@ -1,7 +1,6 @@
 import React from 'react';
 import './Task.css';
 import Checkbox from '../Checkbox/Checkbox';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
  
 class Task extends React.Component{

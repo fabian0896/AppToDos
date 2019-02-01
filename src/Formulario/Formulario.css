@@ -1,14 +1,70 @@
-.Formulario{
-    background: gray;
+.Formulario-container{
+    background: #95a5a6;
     position: absolute;
     z-index: 3;
     top: -100%;
     left: 0;
     right: 0;
-    height: calc(100% - 95px);
-    /* animation: form-enter .7s linear forwards; */
+    /* height: calc(100% - 95px); */
+    height: 100px;
+    display: flex;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    justify-content: center;
+    align-items: center;
 }
 
+.Formulario{
+    position: relative;
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #FFF;
+    margin: 0 20px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.Formulario-input{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 15px;
+    padding: 0 45px 0 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #707070;
+    outline: none;
+    margin-bottom: 20px;
+    background: transparent;
+}
+
+
+.Formulario-Submit{
+    position: absolute;
+    border: none;
+    width: 40px;
+    background: #2ECC71;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.Formulario-Submit:hover{
+    background: #2dc16c;
+}
+
+
+.Formulario-Title{
+    color: #FFF;
+    font-size: 30px;
+}
 
 .active{
     animation: form-enter .7s linear forwards;

@@ -10,7 +10,7 @@ function Header(props){
     }
     return( 
         <div className="Header">
-            <h2 className="Header-title">Cosas por hacer</h2>
+            <h2 className="Header-title"> {props.edit? 'Agregar nueva tarea' : 'Cosas por hacer'}</h2>
             <a  onClick={props.handleClick} className={`Header-button ${ clase }`} href="#" ><i className="fas fa-plus"></i></a>
         </div>
     )
