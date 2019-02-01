@@ -4,7 +4,7 @@ import './Checkbox.css';
 class Checkbox extends React.Component{
     
     state={
-        check: false
+        check: this.props.done
     }
 
     handleClick = ()=>{

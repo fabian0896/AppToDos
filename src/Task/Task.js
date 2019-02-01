@@ -7,8 +7,8 @@ class Task extends React.Component{
         return(
             <div className="Task">
                 <div className="Task-content">
-                    <Checkbox />
-                    <span className="Task-text">{ this.props.task }</span>
+                    <Checkbox  done={ this.props.done }/>
+                    <span className="Task-text">{ this.props.text }</span>
                 </div>
                 <div className="Task-actions">
                     <a className="Task-edit" href="#"><i className="fas fa-pen-square"></i></a>
