@@ -78,7 +78,17 @@ class App extends Component {
       <div className="App">
           <Header edit={this.state.edit} handleClick={this.handleClick} />
           <Formulario value={this.state.inputText} handleChange={this.handleChange } getInput={this.getInput} handleSubmit={ this.handleSubmit } edit={this.state.edit} />
-          <TaskList startEdition={this.startEdition} tasks={ this.props.tasks }/>
+          {
+            this.props.tasks.length?
+            <TaskList startEdition={this.startEdition} tasks={ this.props.tasks }/>
+            :
+            <div>
+              <h2 className="NoTaskTitle">No tienes actividades pendientes</h2>
+              <p className="NoTaskMessage">pulsa "+" para agregar una tarea</p>
+            </div>
+            
+           
+          }
       </div>
     );
   }

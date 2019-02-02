@@ -11,22 +11,6 @@ import { Provider } from 'react-redux';
 const data = {
     
     task: [
-    {
-        text: "comprar cosas",
-        done: false
-    },
-    {
-        text: "Hacer Trabajos",
-        done: true
-    },
-    {
-        text: "Ir a cine",
-        done: false
-    },
-    {
-        text: "Ganar dinero",
-        done: false
-    }
 ],
     inputText: ''
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Task from '../Task/Task';
 import { connect }  from 'react-redux';
+import './taskList.css'
 
 class TaskList extends React.Component{
    
@@ -44,7 +45,7 @@ class TaskList extends React.Component{
     
     render(){
         return(
-            <div>    
+            <div className="TaskList">    
                 {
                    this.props.tasks.map((task, index)=>{
                        return <Task

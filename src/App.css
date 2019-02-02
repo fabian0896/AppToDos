@@ -10,3 +10,14 @@
     box-sizing: border-box;
     position: relative
 }
+
+.NoTaskTitle{
+    text-align: center;
+    margin: 8px 0;
+}
+
+.NoTaskMessage{
+    text-align: center;
+    margin: 5px 0;
+    color: #707070;
+}   
