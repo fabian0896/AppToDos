@@ -19,7 +19,7 @@ class Task extends React.Component{
                {
                    this.props.isHolding &&
                     <div className="Task-actions">
-                        <a className="Task-edit" href="#"><i className="fas fa-pen-square"></i></a>
+                        <a onClick={()=>{this.props.startEdition(this.props.index)}} className="Task-edit" href="#"><i className="fas fa-pen-square"></i></a>
                         <a onClick={()=> this.props.handleDelete(this.props.index)} className="Task-delete" href="#"><i className="fas fa-trash"></i></a>
                     </div>
                }  

@@ -27,7 +27,8 @@ const data = {
         text: "Ganar dinero",
         done: false
     }
-]
+],
+    inputText: ''
 }
 
 
@@ -49,6 +50,24 @@ function reducer(state, action){
             return{
                 ...state,
                 task: state.task.filter((item,index)=> index !== action.payload.idx ),
+            }
+        }
+        case 'ADD_TASK':{
+            return{
+                ...state,
+                task: [ ...state.task,{text: action.payload.value, done: false  }]
+            }
+        }
+        case 'UPDATE_TASK':{
+            return{
+                ...state,
+                task: state.task.map((item, index)=>{
+                    if(index === action.payload.idx){
+                        return { ...item, text: action.payload.message }
+                    }else{
+                        return item;
+                    }
+                })
             }
         }
         default:

@@ -8,7 +8,10 @@ import { connect } from 'react-redux'
 
 class App extends Component {
   state={
-    edit: null
+    edit: null,
+    inputText: '',
+    isEditing: false,
+    idxEditing: null
   }
 
   handleClick = ()=>{
@@ -16,11 +19,57 @@ class App extends Component {
       this.setState({
         edit: true
       })
-      return
+    }else{
+      this.setState({
+        edit: !this.state.edit
+      })
     }
+    if(this.state.edit){
+      this.setState({inputText: ''});
+    }
+  }
+
+  handleSubmit = (event)=>{
+    event.preventDefault();
+    if(this.state.isEditing){
+      this.props.dispatch({
+        type: 'UPDATE_TASK',
+        payload:{
+          idx: this.state.idxEditing,
+          message: this.state.inputText
+        }
+      });
+    } else{
+      this.props.dispatch({
+        type: 'ADD_TASK',
+        payload:{
+          value: this.state.inputText
+        }
+      });
+    }
+    this.handleClick();
     this.setState({
-      edit: !this.state.edit
-    })
+      inputText: '',
+      isEditing: false,
+      idxEditing: null
+    });
+  }
+
+  handleChange =(event)=>{
+    const texto = event.target.value;
+        this.setState({
+            inputText: texto.charAt(0).toUpperCase() + texto.slice(1)
+        })
+  }
+  
+  startEdition = (index)=>{
+    const mensaje = this.props.tasks[index].text;
+    this.setState({
+      inputText: mensaje,
+      idxEditing: index,
+      isEditing: true
+    });
+    this.handleClick();
   }
   
   render() {
@@ -28,8 +77,8 @@ class App extends Component {
       
       <div className="App">
           <Header edit={this.state.edit} handleClick={this.handleClick} />
-          <Formulario edit={this.state.edit} />
-          <TaskList tasks={ this.props.tasks }/>
+          <Formulario value={this.state.inputText} handleChange={this.handleChange } getInput={this.getInput} handleSubmit={ this.handleSubmit } edit={this.state.edit} />
+          <TaskList startEdition={this.startEdition} tasks={ this.props.tasks }/>
       </div>
     );
   }

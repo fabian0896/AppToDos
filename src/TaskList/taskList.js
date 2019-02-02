@@ -48,6 +48,7 @@ class TaskList extends React.Component{
                 {
                    this.props.tasks.map((task, index)=>{
                        return <Task
+                                startEdition={this.props.startEdition}
                                 isHolding={ index === this.state.editingNumber? true : false }
                                 isHoldingHandel = { this.isHoldingHandel }
                                 handleCheck={ this.handleCheck }
