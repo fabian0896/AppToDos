@@ -8,9 +8,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+@media screen and (max-width: 425px){
+  body{
+    display: initial;
+    height: 100vh;
+  }
 }
